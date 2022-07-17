@@ -1,0 +1,67 @@
+***link => https://code-maze.com/email-confirmation-aspnet-core-identity/
+
+Repository Means You have to design Interface and class that is implemented from Interface.
+https://res.cloudinary.com/discf2smt/image/upload/v1645622700/download_xbzses.png
+
+https://www.c-sharpcorner.com/article/authentication-and-authorization-in-asp-net-core-web-api-with-json-web-tokens/
+https://www.c-sharpcorner.com/article/how-to-implement-jwt-authentication-in-web-api-using-net-6-0-asp-net-core/
+
+dotnet ef dbcontext scaffold "Server=.\;Database=AdventureWorksLT2012;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -o Model
+
+dotnet ef dbcontext scaffold "Server=(localdb)\MSSQLlocalDB;Database=ServeDb;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -o Models --project Serve.Core
+
+dotnet ef dbcontext scaffold "Server=(localdb)\MSSQLlocalDB;Database=JWTAuthentication;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -o Model --project TestAPI
+
+dotnet tool install --global dotnet-ef
+
+Microsoft.EntityFrameworkCore.SqlServer 
+Microsoft.EntityFrameworkCore.Tools 
+Microsoft.AspNetCore.Identity.EntityFrameworkCore 
+Microsoft.AspNetCore.Authentication.JwtBearer 
+
+Scaffold-DbContext name=DefaultConnection Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models 
+
+-ContextDir Contexts -Namespace "yournamespace" -f
+
+dotnet add package Microsoft.EntityFrameworkCore.Design
+
+dotnet add package Microsoft.VisualStudio.Web.CodeGeneration
+
+dotnet [options] add [<PROJECT>] package [<PACKAGE_NAME>]
+
+dotnet ef
+
+dotnet add TimeTracker.API package Microsoft.EntityFrameworkCore.Design
+
+dotnet add TimeTracker.API package Microsoft.VisualStudio.Web.CodeGeneration
+
+Alt T N O
+Ctrl E P
+
+Add-Migration InitialCreate -Context ServeDbContext -OutputDir Migrations\SqlServerMigrations
+Add-Migration InitialCreate -Context SqliteBlogContext -OutputDir Migrations\SqliteMigrations
+
+git remote add origin https://gitlab.com/vivante-technologies/time-tracker-backend.git
+
+git remote add origin https://gitlab.com/vivante-technologies/serve-backend
+
+Install-Package Microsoft.EntityFrameworkCore.SqlServer
+
+https://www.learnentityframeworkcore.com/walkthroughs/existing-database
+
+
+protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            if (!optionsBuilder.IsConfigured)
+            {
+
+
+                var builder = new ConfigurationBuilder()
+                              .SetBasePath(Directory.GetCurrentDirectory())
+                              .AddJsonFile("appsettings.json");
+                IConfiguration Configuration = builder.Build();
+
+                optionsBuilder.UseSqlServer(Configuration.GetConnectionString("DbConnection"));
+
+            }
+        }
